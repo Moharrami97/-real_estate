@@ -3,6 +3,10 @@ from deal import Rent, Sale
 
 
 class ApartmentRent(Apartment, Rent):
+    def show_detail(self):
+        self.show_description()
+        self.show_price()
+
     def __str__(self):
         return f"floor: {self.floor} \t fixed_amount: {self.initial_price}"
 

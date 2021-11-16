@@ -3,7 +3,6 @@ from user import User
 from region import Region
 from estate import *
 from advertisment import *
-from deal import Rent, Sale
 
 FIRST_NAME = ["narges", "negin", "milad"]
 LAST_NAME = ["moharrami", "razavi", "hasani"]
@@ -43,3 +42,4 @@ if __name__ == "__main__":
         has_parking=True, floor=2, region=reg1, built_year=1393,
         address="some text...", price_per_meter=10,convertable=False, discountable=True
     )
+    apartment_sell.show_detail()
