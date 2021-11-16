@@ -1,7 +1,7 @@
 from random import choice
 from user import User
 from region import Region
-from real_estate import *
+from estate import *
 
 FIRST_NAME = ["narges", "negin", "milad"]
 LAST_NAME = ["moharrami", "razavi", "hasani"]
