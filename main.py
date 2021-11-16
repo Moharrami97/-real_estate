@@ -1,66 +1,19 @@
-from abc import ABC, abstractmethod
+from random import choice
+from user import User
+from real_estate import *
 
+FIRST_NAME = ["narges", "negin", "milad"]
+LAST_NAME = ["moharrami", "razavi", "hasani"]
+MOBILES = ["09105556677", "09304445588", "09919996585", "09129996633"]
 
-class Apartment:
-    def __init__(self, floor, elevator, *args, **kwargs):
-        self.floor = floor
-        self.elevator = elevator
-        super().__init__(*args, **kwargs)
+if __name__ == "__main__":
+    for mobile in MOBILES:
+        User(choice(FIRST_NAME), choice(LAST_NAME), mobile)
 
+    for user in User.object_list:
+        print(f"{user.id} \t {user.fullname}")
 
-class House:
-    def __init__(self, age, address, *args, **kwargs):
-        self.age = age
-        self.address = address
-        super().__init__(*args, **kwargs)
-
-
-class Rent(ABC):
-    def __init__(self, fixed_amount, monthly_amount):
-        self.fixed_amount = fixed_amount
-        self.monthly_amount = monthly_amount
-
-    @abstractmethod
-    def show_banner(self):
-        pass
-
-
-class Sale(ABC):
-    def __init__(self, fee):
-        self.fee = fee
-
-    @abstractmethod
-    def show_banner(self):
-        pass
-
-
-class ApartmentRent(Apartment, Rent):
-    def __str__(self):
-        return f"floor: {self.floor} \t fixed_amount: {self.fixed_amount}"
-
-    def show_banner(self):
-        return "show banner in ApartmentRent"
-
-
-class ApartmentSale(Apartment, Sale):
-    def __str__(self):
-        return f"floor: {self.floor} \t fee: {self.fee}"
-
-    def show_banner(self):
-        return "show banner in ApartmentSale"
-
-
-class HouseRent(House, Rent):
-    def __str__(self):
-        return f"address: {self.address} \t fixed_amount: {self.fixed_amount}"
-
-    def show_banner(self):
-        return "show banner in HouseRent"
-
-
-class HouseSale(House, Sale):
-    def __str__(self):
-        return f"address: {self.address} \t fixed_amount: {self.fee}"
-
-    def show_banner(self):
-        return "show banner in HouseSale"
+# apartment_rent = ApartmentRent(floor=2, elevator=True, fixed_amount=50000000, monthly_amount=1000000)
+# apartment_sale = ApartmentSale(floor=2, elevator=True, fee=500000000)
+# house_rent = HouseRent(age=8, address="tehran", fixed_amount=60000000, monthly_amount=2000000)
+# house_sale = HouseSale(age=8, address="tehran", fee=600000000)

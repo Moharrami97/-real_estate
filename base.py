@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class BaseClass(ABC):
@@ -6,7 +6,7 @@ class BaseClass(ABC):
     object_list = list()
 
     def __init__(self):
-        self._id = self.generate_id()
+        self.id = self.generate_id()
         self.store(self)
 
     @classmethod
