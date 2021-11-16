@@ -14,7 +14,22 @@ if __name__ == "__main__":
     for user in User.object_list:
         print(f"{user.id} \t {user.fullname}")
 
-# apartment_rent = ApartmentRent(floor=2, elevator=True, fixed_amount=50000000, monthly_amount=1000000)
-# apartment_sale = ApartmentSale(floor=2, elevator=True, fee=500000000)
-# house_rent = HouseRent(age=8, address="tehran", fixed_amount=60000000, monthly_amount=2000000)
-# house_sale = HouseSale(age=8, address="tehran", fee=600000000)
+    reg1 = Region(name= "azadi")
+    apt1 = Apartment(
+        user=User.object_list[0], area=80, room_count=2, has_elevator=True,
+        has_parking=True, floor=2, region=reg1, built_year=1393,
+        address="some text..."
+    )
+    apt1.show_description()
+
+    house1 = House(
+        has_yard=True, floors_count=1, user=User.object_list[2], area=480,
+        room_count=6, built_year=1370, region=reg1, address="some text..."
+    )
+    house1.show_description()
+
+    store1 = Store(
+        user=User.object_list[-1], area=30, room_count=0, built_year=1390,
+        region=reg1, address="some text..."
+    )
+    store1.show_description()
