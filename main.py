@@ -1,5 +1,6 @@
 from random import choice
 from user import User
+from region import Region
 from real_estate import *
 
 FIRST_NAME = ["narges", "negin", "milad"]
