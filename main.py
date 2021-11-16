@@ -2,7 +2,8 @@ from random import choice
 from user import User
 from region import Region
 from estate import *
-from deal import Rent,Sale
+from advertisment import *
+from deal import Rent, Sale
 
 FIRST_NAME = ["narges", "negin", "milad"]
 LAST_NAME = ["moharrami", "razavi", "hasani"]
@@ -15,7 +16,7 @@ if __name__ == "__main__":
     for user in User.object_list:
         print(f"{user.id} \t {user.fullname}")
 
-    reg1 = Region(name= "azadi")
+    reg1 = Region(name="azadi")
     apt1 = Apartment(
         user=User.object_list[0], area=80, room_count=2, has_elevator=True,
         has_parking=True, floor=2, region=reg1, built_year=1393,
@@ -34,3 +35,11 @@ if __name__ == "__main__":
         region=reg1, address="some text..."
     )
     store1.show_description()
+
+
+    #creat advertisment
+    apartment_sell = ApartmentSale(
+        user=User.object_list[0], area=80, room_count=2, has_elevator=True,
+        has_parking=True, floor=2, region=reg1, built_year=1393,
+        address="some text...", price_per_meter=10,convertable=False, discountable=True
+    )

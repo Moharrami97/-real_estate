@@ -16,3 +16,6 @@ class Sale(BaseClass):
         self.convertable = convertable
         self.discountable = discountable
         super().__init__(*args, **kwargs)
+
+    def show_price(self):
+        print(f"price: {self.price_per_meter} \t discountable: {self.discountable} \t convertable: {self.convertable}")
