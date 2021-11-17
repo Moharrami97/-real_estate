@@ -25,7 +25,7 @@ class Apartment(EstateAbstract):
         super().__init__(*args, **kwargs)
 
     def show_description(self):
-        print(f"Apartment {self.id}")
+        print(f"Apartment_id: {self.id}")
 
 
 class House(EstateAbstract):
