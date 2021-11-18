@@ -53,3 +53,6 @@ if __name__ == "__main__":
         price_per_meter=90, convertable=True, discountable=False
     )
     house_sell.show_detail()
+
+    print(ApartmentSale.manager)
+    print(HouseSale.manager)
