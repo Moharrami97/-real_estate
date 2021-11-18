@@ -54,5 +54,8 @@ if __name__ == "__main__":
     )
     house_sell.show_detail()
 
-    print(ApartmentSale.manager)
-    print(HouseSale.manager)
+    search_result_manager = ApartmentSale.manager.search(region=reg2)
+    print(search_result_manager)
+
+    search_result_get = ApartmentSale.manager.get(region=reg1)
+    print(search_result_get)
