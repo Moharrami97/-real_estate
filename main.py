@@ -36,14 +36,14 @@ if __name__ == "__main__":
     apartment_sell1 = ApartmentSale(
         user=User.object_list[0], area=80, room_count=2, has_elevator=True, floor=2,
         has_parking=True, region=reg1, built_year=1393,
-        address="some text...", price_per_meter=10, convertable=False, discountable=True
+        address="some text...", price_per_meter=50, convertable=False, discountable=True
     )
     apartment_sell1.show_detail()
 
     apartment_sell2 = ApartmentSale(
         user=User.object_list[1], area=100, room_count=3, has_elevator=True, floor=1,
         has_parking=True, region=reg2, built_year=1385,
-        address="some text...", price_per_meter=30, convertable=True, discountable=True
+        address="some text...", price_per_meter=70, convertable=True, discountable=True
     )
     apartment_sell2.show_detail()
 
@@ -57,5 +57,11 @@ if __name__ == "__main__":
     search_result_manager = ApartmentSale.manager.search(region=reg2)
     print(search_result_manager)
 
-    search_result_get = ApartmentSale.manager.get(region=reg1)
+    search_result_manager = ApartmentSale.manager.search(price_per_meter__max=80)
+    print(search_result_manager)
+
+    search_result_get = ApartmentSale.manager.get(room_count=3)
+    print(search_result_get)
+
+    search_result_get = ApartmentSale.manager.get(area__max=100)
     print(search_result_get)
