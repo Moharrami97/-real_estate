@@ -11,7 +11,7 @@ class Rent(ABC):
 
     def show_price(self):
         print(
-            f"price: {self.price_per_meter} \t discountable: {self.discountable}"
+            f"price: {self.initial_price} \t discountable: {self.discountable}"
             f" \t convertable: {self.convertable}"
         )
 
