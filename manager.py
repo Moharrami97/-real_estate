@@ -8,6 +8,12 @@ class Manager:
     def search(self, **kwargs):
         results = list()
         for keys, value in kwargs.items():
+            if type(value) == list:
+                for obj in self._class.object_list:
+                    if hasattr(obj, keys):
+                        result = bool(getattr(obj, keys) >= value[0]) and bool(getattr(obj, keys) <= value[1])
+                        if result:
+                            results.append(obj)
             if keys.endswith("__min"):
                 keys = keys[:-5]
                 compare_key = "min"

@@ -41,3 +41,5 @@ if __name__ == "__main__":
     handler = Handler()
 
     handler.run()
+    search_result_manager = ApartmentSale.manager.search(price_per_meter=[40, 80])
+    print(search_result_manager)
